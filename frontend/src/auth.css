@@ -1,0 +1,208 @@
+/* Import dei font */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Variabili colore */
+:root {
+    --lilla-1: #d29ce7;
+    --lilla-2: #b069cc;
+    --lilla-3: #8e44ad;
+    --lilla-4: #631e81;
+    --lilla-5: #4f0c6b;
+    --ombra-chiara: #8e44ad80;
+    --ombra-scura: #510b6e80;
+    --bg-input: #fdf8ff;
+}
+
+/* Corpo */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Layout comuni per login/signup */
+.login,
+.signup {
+    width: 90%;
+    max-width: 400px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    margin: 2rem auto;
+    box-sizing: border-box;
+}
+
+/* Titoli */
+.login h2,
+.signup h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: var(--lilla-5);
+}
+
+.logo {
+    padding: 0.2rem;
+    margin-top: -1.2rem;
+    font-size: 4.5rem;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    background: radial-gradient(
+        ellipse farthest-corner at center center,
+        var(--lilla-4) 0%,
+        var(--lilla-2) 88%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 6px var(--ombra-chiara);
+}
+
+/* Form */
+.login form,
+.signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 1.5rem 0;
+}
+
+/* Input form */
+.form-control {
+    padding: 12px 18px;
+    border-radius: 25px;
+    border: 1px solid var(--lilla-1);
+    background-color: var(--bg-input);
+    transition: all 0.3s ease;
+    outline: none;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: var(--lilla-3);
+    box-shadow: 0 0 6px var(--ombra-chiara);
+    background-color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--lilla-5) !important;
+    box-shadow: 0 0 0px 1000px var(--bg-input) inset !important;
+}
+
+/* Bottone */
+.btn-primary {
+    display: inline-block;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    font-size: 1rem;
+    height: 45px;
+    padding: 10px 24px;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg, var(--lilla-1), var(--lilla-3));
+    box-shadow: 0 4px 11px 0 var(--ombra-chiara), 0 1px 3px 0 var(--ombra-scura);
+    transition: all 0.2s ease-out;
+    width: 100%;
+    max-width: 300px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px 0 var(--ombra-chiara), 0 4px 6px 0 var(--ombra-scura);
+}
+
+/* Link di navigazione tra login/signup */
+.link-signup a,
+.link-login a {
+    color: var(--lilla-3);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.link-signup a:hover,
+.link-login a:hover {
+    text-decoration: underline;
+    color: var(--lilla-4);
+}
+
+/* Alert errori */
+.alert-danger {
+    color: #c0392b;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    margin-top: 0.7rem;
+    margin-bottom: -0.7rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-3px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Query: Tablet */
+@media (min-width: 600px) {
+    .login,
+    .signup {
+        max-width: 450px;
+    }
+
+    .logo {
+        font-size: 5rem;
+        margin-top: -1.2rem;
+    }
+
+    .login h2,
+    .signup h2 {
+        font-size: 2rem;
+    }
+
+    .btn-primary {
+        font-size: 1.05rem;
+        height: 48px;
+    }
+}
+
+/* Media Query: Desktop */
+@media (min-width: 1024px) {
+    .login,
+    .signup {
+        max-width: 500px;
+    }
+
+    .logo {
+        font-size: 5.5rem;
+        margin-top: -1.5rem;
+    }
+
+    .login h2,
+    .signup h2 {
+        font-size: 2.2rem;
+    }
+
+    .btn-primary {
+        font-size: 1.1rem;
+        height: 50px;
+    }
+}
