@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../App";
 import { login as apiLogin } from "../services/api";
-import "../auth.css";
+import "../assets/auth.css";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -40,7 +40,7 @@ const Login = () => {
         <div className="login">
             <h2>
                 Benvenutə su
-                <div className="logo">Budgetly!</div>
+                <div className="home-logo">Budgetly!</div>
             </h2>
 
             {error && <div className="alert alert-danger">{error}</div>}
@@ -74,7 +74,10 @@ const Login = () => {
             </form>
 
             <p className="text-center mt-3">
-                Non hai un account? <Link to="/signup">Registrati</Link>
+                Non hai un account?{" "}
+                <Link to="/signup" className="link-signup">
+                    Registrati
+                </Link>
             </p>
         </div>
     );

@@ -1,5 +1,10 @@
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "./assets/general.css";
+
 import App, { ProtectedRoute } from "./App";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../App";
 import { signup as apiSignup } from "../services/api";
-import "../auth.css";
+import "../assets/auth.css";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -43,7 +43,7 @@ const Signup = () => {
         <div className="signup">
             <h2>
                 Crea il tuo account su
-                <div className="logo">Budgetly!</div>
+                <div className="home-logo">Budgetly!</div>
             </h2>
 
             {error && <div className="alert alert-danger">{error}</div>}
@@ -86,7 +86,10 @@ const Signup = () => {
             </form>
 
             <p className="text-center mt-3">
-                Hai già un account? <Link to="/login">Accedi</Link>
+                Hai già un account?{" "}
+                <Link to="/login" className="link-login">
+                    Accedi
+                </Link>
             </p>
         </div>
     );

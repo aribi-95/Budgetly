@@ -1,7 +1,6 @@
 import axios from "axios";
 
-// URL del backend
-const API_URL = "http://localhost:4000/api";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const api = axios.create({
     baseURL: API_URL,
@@ -36,12 +35,19 @@ export const getTransactions = (month, year) =>
     api.get(`/transactions?month=${month}&year=${year}`);
 
 export const getMonthsWithTransactions = () => api.get("/transactions/months");
+export const getMonthlySummary = (month, year) =>
+    api.get(`/transactions/summary?month=${month}&year=${year}`);
+export const getYearTransactions = (year) =>
+    api.get(`/transactions/year?year=${year}`);
 
 export const addTransaction = (data) => api.post("/transactions", data);
-
 export const updateTransaction = (id, data) =>
     api.put(`/transactions/${id}`, data);
-
 export const deleteTransaction = (id) => api.delete(`/transactions/${id}`);
+
+// Categorie
+export const getCategories = () => api.get("/categories");
+export const addCategory = (data) => api.post("/categories", data);
+export const deleteCategory = (name) => api.delete(`/categories/${name}`);
 
 export default api;

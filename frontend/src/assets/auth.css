@@ -1,31 +1,3 @@
-/* Import dei font */
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-/* Variabili colore */
-:root {
-    --lilla-1: #d29ce7;
-    --lilla-2: #b069cc;
-    --lilla-3: #8e44ad;
-    --lilla-4: #631e81;
-    --lilla-5: #4f0c6b;
-    --ombra-chiara: #8e44ad80;
-    --ombra-scura: #510b6e80;
-    --bg-input: #fdf8ff;
-}
-
-/* Corpo */
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: "Roboto", sans-serif;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 /* Layout comuni per login/signup */
 .login,
 .signup {
@@ -45,15 +17,17 @@ html {
 /* Titoli */
 .login h2,
 .signup h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
     color: var(--lilla-5);
 }
 
-.logo {
+.home-logo {
+    line-height: 1.9;
     padding: 0.2rem;
-    margin-top: -1.2rem;
-    font-size: 4.5rem;
+    margin-top: -2.5rem;
+    margin-bottom: -1rem;
+    font-size: 5rem;
     font-family: "Pacifico", cursive;
     font-weight: 400;
     background: radial-gradient(
@@ -126,15 +100,15 @@ input:-webkit-autofill:focus {
 }
 
 /* Link di navigazione tra login/signup */
-.link-signup a,
-.link-login a {
+.link-signup,
+.link-login {
     color: var(--lilla-3);
     text-decoration: none;
     transition: color 0.2s;
 }
 
-.link-signup a:hover,
-.link-login a:hover {
+.link-signup:hover,
+.link-login:hover {
     text-decoration: underline;
     color: var(--lilla-4);
 }
@@ -142,11 +116,12 @@ input:-webkit-autofill:focus {
 /* Alert errori */
 .alert-danger {
     color: #c0392b;
+    border: none;
+    background-color: transparent;
     font-weight: 600;
     text-align: center;
     width: 100%;
-    margin-top: 0.7rem;
-    margin-bottom: -0.7rem;
+    margin: -0.8rem 0 -0.7rem 0;
     animation: fadeIn 0.3s ease-in-out;
 }
 

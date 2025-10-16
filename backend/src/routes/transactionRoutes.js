@@ -6,6 +6,8 @@ import {
     updateTransaction,
     deleteTransaction,
     getMonthsWithTransactions,
+    getYearTransactions,
+    getMonthlySummary,
 } from "../controllers/transactionController.js";
 
 const router = express.Router();
@@ -13,6 +15,9 @@ const router = express.Router();
 router.use(authMiddleware); // Tutte le rotte sotto richiedono autenticazione
 
 router.get("/months", getMonthsWithTransactions);
+router.get("/summary", getMonthlySummary);
+router.get("/year", getYearTransactions);
+
 router.get("/", getTransactions);
 router.post("/", addTransaction);
 router.put("/:id", updateTransaction);

@@ -1,0 +1,27 @@
+/* Import dei font */
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Variabili colore */
+:root {
+    --lilla-1: #d29ce7;
+    --lilla-2: #b069cc;
+    --lilla-3: #8e44ad;
+    --lilla-4: #631e81;
+    --lilla-5: #4f0c6b;
+    --ombra-chiara: #8e44ad80;
+    --ombra-scura: #510b6e80;
+    --bg-input: #fdf8ff;
+}
+
+/* Corpo */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
